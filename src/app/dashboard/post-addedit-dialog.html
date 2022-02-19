@@ -1,0 +1,189 @@
+<div fxFlex>
+  <div
+    style="margin: 10px 5px"
+    fxLayout="row wrap"
+    fxLayoutAlign="space-between"
+  >
+    <div
+      style="
+        font-size: x-large;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+        text-align: center;
+      "
+    >
+      {{showForm | titlecase}}
+    </div>
+    <mat-icon
+      color="warn"
+      matTooltip="Close dialog"
+      (click)="this.dialogRef.close()"
+      >cancel</mat-icon
+    >
+  </div>
+
+  <form *ngIf="showForm == 'post'" [formGroup]="form" (submit)="onSubmit()">
+    <div fxLayout="column wrap" fxLayoutAlign="center center">
+      <div
+        style="width: 100%; min-width: 300px"
+        fxLayout="row"
+        fxLayoutAlign="start  center"
+      >
+        <label
+          fxFlex="15%"
+          style="
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >Title</label
+        >
+        <textarea
+          formControlName="title"
+          name="title"
+          id="title"
+          fxFlex="85%"
+        ></textarea>
+      </div>
+      <div
+        fxFlex
+        style="width: 100%; padding-top: 15px; padding-bottom: 10px"
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+      >
+        <label
+          fxFlex="15%"
+          style="
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >Body</label
+        >
+        <textarea
+          style="height: 100px !important"
+          formControlName="body"
+          name="body"
+          id="body"
+          fxFlex="85%"
+        ></textarea>
+      </div>
+      <button type="submit" color="primary" mat-raised-button>Save</button>
+    </div>
+  </form>
+
+  <form *ngIf="showForm == 'comment'" [formGroup]="form" (submit)="onSubmit()">
+    <div fxLayout="column wrap" fxLayoutAlign="center center">
+      <div
+        style="width: 100%; min-width: 300px"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between  center"
+      >
+        <label
+          fxFlex="15%"
+          style="
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >Name</label
+        >
+        <textarea
+          formControlName="name"
+          name="name"
+          id="name"
+          fxFlex="85%"
+        ></textarea>
+      </div>
+      <div
+        fxFlex
+        style="width: 100%; padding-top: 15px; padding-bottom: 10px"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between center"
+      >
+        <label
+          fxFlex="15%"
+          style="
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >Email</label
+        >
+        <input
+          style="height: 30px"
+          formControlName="email"
+          name="email"
+          id="email"
+          fxFlex="85%"
+        />
+        <!-- <textarea
+          formControlName="email"
+          name="email"
+          id="email"
+          fxFlex="85%"
+        ></textarea> -->
+      </div>
+      <div
+        fxFlex
+        style="width: 100%; padding-top: 15px; padding-bottom: 10px"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between center"
+      >
+        <label
+          fxFlex="15%"
+          style="
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >Body</label
+        >
+        <textarea
+          style="height: 100px !important"
+          formControlName="body"
+          name="body"
+          id="body"
+          fxFlex="85%"
+        ></textarea>
+      </div>
+      <button type="submit" color="primary" mat-raised-button>Save</button>
+    </div>
+  </form>
+
+  <form *ngIf="showForm == 'todo'" [formGroup]="form" (submit)="onSubmit()">
+    <div fxLayout="column wrap" fxLayoutAlign="center center">
+      <div
+        style="width: 100%; min-width: 300px"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-between  center"
+      >
+        <label
+          fxFlex="15%"
+          style="
+            font-size: larger;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;
+          "
+          >Title</label
+        >
+        <textarea
+          formControlName="title"
+          name="title"
+          id="title"
+          fxFlex="85%"
+        ></textarea>
+      </div>
+
+      <div
+        fxFlex
+        style="width: 100%; padding-top: 15px; padding-bottom: 10px"
+        fxLayout="row wrap"
+        fxLayoutAlign="end center"
+      >
+        <mat-checkbox formControlName="completed">Completed</mat-checkbox>
+      </div>
+      <button type="submit" color="primary" mat-raised-button>Save</button>
+    </div>
+  </form>
+</div>

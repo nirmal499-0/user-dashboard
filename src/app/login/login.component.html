@@ -1,0 +1,65 @@
+<div
+  fxFlex
+  style="
+    background-color: rgb(115, 146, 201);
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  "
+  fxLayout="column wrap"
+  fxLayoutAlign="center center"
+>
+  <div
+    style="
+      margin-bottom: 30px;
+      font-size: x-large;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+        sans-serif;
+    "
+  >
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly">
+      <div>Login to See Your Posts</div>
+      <div style="padding-left: 10px">
+        <mat-icon>local_post_office</mat-icon>
+      </div>
+    </div>
+  </div>
+  <div
+    style="
+      background-color: rgb(194, 203, 219);
+      width: 250px;
+      height: 250px;
+      border-radius: 10px;
+    "
+    fxLayout="column wrap"
+    fxLayoutAlign="center center"
+  >
+    <mat-form-field appearance="outline">
+      <mat-label>User ID</mat-label>
+      <input id="userId" matInput required #userId />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input type="password" id="psw" matInput required />
+    </mat-form-field>
+    <button
+      style="
+        width: 45%;
+        height: 13%;
+        border-radius: 6px;
+        background-color: rgb(12, 41, 90);
+        color: white;
+        border: none;
+        cursor: pointer;
+      "
+      (click)="login(userId.value)"
+    >
+      Login
+    </button>
+    <!-- <button mat-flat-button color="primary">Login</button> -->
+  </div>
+</div>

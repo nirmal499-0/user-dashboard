@@ -1,0 +1,55 @@
+.menu {
+  font-size: larger;
+  padding: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}
+
+/* mat-menu::-webkit-scrollbar {
+  width: 0;
+}
+
+.mat-menu-content:not(:empty)::-webkit-scrollbar {
+  width: 0;
+} */
+::ng-deep .mat-menu-panel::-webkit-scrollbar {
+  width: 0;
+}
+::ng-deep .mat-menu-panel {
+  /* width: ; */
+}
+
+.menu-inner-item {
+  padding: 3px;
+  border-radius: 4px;
+}
+
+.menu-inner-item:hover {
+  background-color: rgb(222, 225, 230);
+}
+
+.del-item:hover {
+  color: rgb(201, 49, 49);
+  cursor: pointer;
+}
+
+.example-full-width {
+  width: 100%;
+  height: max-content;
+}
+
+textarea::-webkit-scrollbar {
+  width: 0;
+}
+
+input::-webkit-scrollbar {
+  width: 0;
+}
+
+.drop-opt {
+  cursor: pointer;
+}
+
+.drop-opt:hover {
+  color: #000080;
+}
