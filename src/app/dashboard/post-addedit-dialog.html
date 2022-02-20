@@ -30,7 +30,9 @@
     >
       <div
         style="width: 100%; min-width: 300px"
-        fxLayout="row"
+        fxLayout="row wrap"
+        fxLayout.xs="column"
+        fxLayout.xm="column"
         fxLayoutAlign="start  center"
       >
         <label
@@ -42,18 +44,22 @@
           "
           >Title</label
         >
-        <textarea
-          formControlName="title"
-          name="title"
-          id="title"
-          fxFlex="85%"
-        ></textarea>
+        <div fxFlex>
+          <textarea
+            formControlName="title"
+            name="title"
+            id="title"
+            style="width: 100%"
+          ></textarea>
+        </div>
       </div>
       <div
         fxFlex
         style="width: 100%; padding-top: 15px; padding-bottom: 10px"
-        fxLayout="row"
-        fxLayoutAlign="space-between center"
+        fxLayout="row wrap"
+        fxLayout.xs="column"
+        fxLayout.xm="column"
+        fxLayoutAlign="space-between"
       >
         <label
           fxFlex="15%"
@@ -64,13 +70,14 @@
           "
           >Body</label
         >
-        <textarea
-          style="height: 100px !important"
-          formControlName="body"
-          name="body"
-          id="body"
-          fxFlex="85%"
-        ></textarea>
+        <div fxFlex>
+          <textarea
+            style="height: 100px; width: 100%"
+            formControlName="body"
+            name="body"
+            id="body"
+          ></textarea>
+        </div>
       </div>
       <button type="submit" color="primary" mat-raised-button>Save</button>
     </div>
@@ -85,7 +92,9 @@
       <div
         style="width: 100%; min-width: 300px"
         fxLayout="row wrap"
-        fxLayoutAlign="space-between  center"
+        fxLayout.xs="column"
+        fxLayout.xm="column"
+        fxLayoutAlign="space-between"
       >
         <label
           fxFlex="15%"
@@ -96,18 +105,22 @@
           "
           >Name</label
         >
-        <textarea
-          formControlName="name"
-          name="name"
-          id="name"
-          fxFlex="85%"
-        ></textarea>
+        <div fxFlex>
+          <textarea
+            formControlName="name"
+            name="name"
+            id="name"
+            style="width: 100%"
+          ></textarea>
+        </div>
       </div>
       <div
         fxFlex
         style="width: 100%; padding-top: 15px; padding-bottom: 10px"
         fxLayout="row wrap"
-        fxLayoutAlign="space-between center"
+        fxLayout.xs="column"
+        fxLayout.xm="column"
+        fxLayoutAlign="space-between "
       >
         <label
           fxFlex="15%"
@@ -118,13 +131,17 @@
           "
           >Email</label
         >
+
         <input
-          style="height: 30px"
           formControlName="email"
           name="email"
           id="email"
-          fxFlex="85%"
+          fxFlex.sm="85%"
+          fxFlex.md="85%"
+          fxFlex.lg="85%"
+          fxFlex.xl="85%"
         />
+
         <!-- <textarea
           formControlName="email"
           name="email"
@@ -136,7 +153,9 @@
         fxFlex
         style="width: 100%; padding-top: 15px; padding-bottom: 10px"
         fxLayout="row wrap"
-        fxLayoutAlign="space-between center"
+        fxLayout.xs="column"
+        fxLayout.xm="column"
+        fxLayoutAlign="space-between"
       >
         <label
           fxFlex="15%"
@@ -147,13 +166,14 @@
           "
           >Body</label
         >
-        <textarea
-          style="height: 100px !important"
-          formControlName="body"
-          name="body"
-          id="body"
-          fxFlex="85%"
-        ></textarea>
+        <div fxFlex>
+          <textarea
+            style="height: 100px; width: 100%"
+            formControlName="body"
+            name="body"
+            id="body"
+          ></textarea>
+        </div>
       </div>
       <button type="submit" color="primary" mat-raised-button>Save</button>
     </div>
@@ -168,7 +188,9 @@
       <div
         style="width: 100%; min-width: 300px"
         fxLayout="row wrap"
-        fxLayoutAlign="space-between  center"
+        fxLayout.xs="column"
+        fxLayout.xm="column"
+        fxLayoutAlign="space-between "
       >
         <label
           fxFlex="15%"
@@ -179,12 +201,14 @@
           "
           >Title</label
         >
-        <textarea
-          formControlName="title"
-          name="title"
-          id="title"
-          fxFlex="85%"
-        ></textarea>
+        <div fxFlex>
+          <textarea
+            formControlName="title"
+            name="title"
+            id="title"
+            style="width: 100%"
+          ></textarea>
+        </div>
       </div>
 
       <div
@@ -192,6 +216,8 @@
         style="width: 100%; padding-top: 15px; padding-bottom: 10px"
         fxLayout="row wrap"
         fxLayoutAlign="end center"
+        fxLayoutAlign.xs="center center"
+        fxLayoutAlign.xm="center center"
       >
         <mat-checkbox formControlName="completed">Completed</mat-checkbox>
       </div>
