@@ -60,7 +60,7 @@ export class DashboardComponent implements OnInit {
 
   open(item: any, type: string) {
     const dialogRef = this.dialog.open(ViewEditDialog, {
-      width: '30%',
+      width: '450px',
       data: {
         formType: type,
         data: item,
