@@ -23,7 +23,11 @@
   </div>
 
   <form *ngIf="showForm == 'post'" [formGroup]="form" (submit)="onSubmit()">
-    <div fxLayout="column wrap" fxLayoutAlign="center center">
+    <div
+      style="margin-right: 10px"
+      fxLayout="column wrap"
+      fxLayoutAlign="center center"
+    >
       <div
         style="width: 100%; min-width: 300px"
         fxLayout="row"
@@ -73,7 +77,11 @@
   </form>
 
   <form *ngIf="showForm == 'comment'" [formGroup]="form" (submit)="onSubmit()">
-    <div fxLayout="column wrap" fxLayoutAlign="center center">
+    <div
+      style="margin-right: 10px"
+      fxLayout="column wrap"
+      fxLayoutAlign="center center"
+    >
       <div
         style="width: 100%; min-width: 300px"
         fxLayout="row wrap"
@@ -152,7 +160,11 @@
   </form>
 
   <form *ngIf="showForm == 'todo'" [formGroup]="form" (submit)="onSubmit()">
-    <div fxLayout="column wrap" fxLayoutAlign="center center">
+    <div
+      style="margin-right: 10px"
+      fxLayout="column wrap"
+      fxLayoutAlign="center center"
+    >
       <div
         style="width: 100%; min-width: 300px"
         fxLayout="row wrap"
