@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { SocialAuthService } from 'angularx-social-login';
+import { SocialUser } from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +11,20 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private router: Router, private _snackBar: MatSnackBar) {}
+  public user: SocialUser = new SocialUser();
 
-  ngOnInit(): void {}
+  constructor(
+    private router: Router,
+    private _snackBar: MatSnackBar,
+    private authService: SocialAuthService
+  ) {}
+
+  ngOnInit(): void {
+    this.authService.authState.subscribe((user) => {
+      this.user = user;
+      console.log('user ' + JSON.stringify(user));
+    });
+  }
 
   login(userId: any) {
     console.log(userId);
@@ -23,5 +37,13 @@ export class LoginComponent implements OnInit {
         duration: 3000,
       });
     }
+  }
+
+  loginWithGoogle() {
+    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  }
+
+  signOut(): void {
+    this.authService.signOut();
   }
 }

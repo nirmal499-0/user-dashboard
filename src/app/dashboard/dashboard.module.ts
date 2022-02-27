@@ -5,6 +5,8 @@ import { MaterialModule } from '../../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardComponent, ViewEditDialog } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { ObserSubExComponent } from '../obser-sub-ex/obser-sub-ex.component';
+import { ObserSubEx2Component } from '../obser-sub-ex2/obser-sub-ex2.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,12 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     DashboardRoutingModule,
     FlexLayoutModule,
   ],
-  declarations: [DashboardComponent, ViewEditDialog],
+  declarations: [
+    DashboardComponent,
+    ViewEditDialog,
+    ObserSubExComponent,
+    ObserSubEx2Component,
+  ],
   entryComponents: [ViewEditDialog],
   exports: [DashboardComponent],
 })

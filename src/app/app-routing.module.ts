@@ -13,6 +13,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
   },
+  {
+    path: 'map',
+    loadChildren: () =>
+      import('./google-map-ex/google-map-ex.module').then(
+        (m) => m.GoogleMApExModule
+      ),
+  },
 ];
 
 @NgModule({

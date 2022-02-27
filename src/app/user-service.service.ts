@@ -1,16 +1,30 @@
 import { Injectable } from '@angular/core';
+import { _MatSlideToggleRequiredValidatorModule } from '@angular/material/slide-toggle';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserServiceService {
+  private _msg = new Subject<any>();
+  msg$ = this._msg.asObservable();
+  msg$2 = this._msg.asObservable();
+
   constructor() {}
+
+  sendMsg(msg: any) {
+    this._msg.next(msg);
+  }
+  sendMsg2(msg: any) {
+    this._msg.next(msg);
+  }
 
   getPosts(userId: any) {
     const params = new URLSearchParams({
       userId: userId,
     });
     let url = `https://jsonplaceholder.typicode.com/posts?${params.toString()} `;
+    // let url = "https://jsonplaceholder.typicode.com/posts?"+params.toString();
     console.log(url);
     return fetch(url).then((response) => response.json());
     // .then((json) => (res = json));
